@@ -12,7 +12,7 @@
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.hikari.maximumPoolSize">4</property>
         <property name="hibernate.connection.provider_class">com.zaxxer.hikari.hibernate.HikariConnectionProvider</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         <mapping class="ru.itis.models.Video"/>
         <mapping class="ru.itis.models.Link"/>
     </session-factory>
