@@ -21,7 +21,7 @@ public class Main {
 
     public static final String channelId = "UC7f5bVxWsm3jlZIPDzOMcAg";
 
-    public static final String api_key = "AIzaSyDfaOZqbkh8mhdEIMC05eukGO0PlqWmCjI";
+    public static final String api_key = "";
 
     public static final String baseSearchUrl = "https://www.googleapis.com/youtube/v3/search?";
 
