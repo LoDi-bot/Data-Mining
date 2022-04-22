@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         HashSet<String> wordsSet = countIntoSet();
         int m = wordsSet.size();
-        System.out.println("Text contains " + m + "unique words");
+        System.out.println("Text contains " + m + " unique words");
         System.out.println("With estimated accuracy 90%:");
         int n = (int) Math.ceil((- m * Math.log(0.1d)) / Math.pow(Math.log(2.0d), 2));
         System.out.println("n - number of bits: " + n);
@@ -17,6 +17,8 @@ public class Main {
             bloomFilter.add(word);
         }
 
+        System.out.println(Arrays.toString(bloomFilter.getArray()));
+
         String[] check = new String[] {"data", "mining", "flex", "empire", "feather", "Anna", "mobile", "computer", "cyrus", "itis"};
 
         for (String word : check) {
@@ -26,10 +28,10 @@ public class Main {
 
     public static HashSet<String> countIntoSet() throws IOException {
         HashSet<String> resultSet = new HashSet<>();
-        BufferedReader reader = new BufferedReader(new FileReader("/Users/lodi/Desktop/Classwork/Java/Lesson 11/vim1.txt", StandardCharsets.UTF_8));
+        BufferedReader reader = new BufferedReader(new FileReader("text.txt", StandardCharsets.UTF_8));
         String currentLine = reader.readLine();
         while (currentLine != null) {
-            String[] words = currentLine.toLowerCase().split("[\"\\[\\]'.,;:=@#%<>_!?(){}\\-+|& */]");
+            String[] words = currentLine.toLowerCase().split("[\"\\[\\]'.,;:=@#%<>_!?(){}\\-+—|& */]");
 
             for (String word : words) {
                 if (!word.isBlank()) {
